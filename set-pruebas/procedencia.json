@@ -1,0 +1,21 @@
+{
+  "source": "Ejemplos FHIR generados de la guía de implementación",
+  "sourceSha256": {
+    "Bundle-hcen-provide-document-bundle-cnu-asse.json": "0e50a6f3540848cee0fd960adb9de65faa90a4f7d7762bd1078f93cf9889dd08",
+    "Bundle-hcen-cnu-medicina-general-bundle.json": "707bd39f4edd7e0643b8fd2b6a1a37fa6d76ad39b790249a335415d64159be36",
+    "Patient-hcen-paciente-gonzalez.json": "b392d560db06ec160c28f29ee3b676198e3752b69c2c1785cc166be4c86132e6"
+  },
+  "mrnDomainPoc": "urn:oid:2.16.858.2.99999999.72768.1",
+  "changes": [
+    "Dominio MRN adaptado en todas sus apariciones al cliente de prueba configurado.",
+    "attachment.url enlaza el Bundle documental incluido.",
+    "Referencia Binary local y entrada Binary con CDA nivel 1 del mismo documento.",
+    "Patient.id se omite en las solicitudes condicionales ITI-104: el Gateway asigna su id local.",
+    "Actualización ITI-104 modifica telecom y retira su narrativa para evitar texto desactualizado."
+  ],
+  "cda": {
+    "documentOid": "2.16.858.2.10001442.67430.20261007103112.1",
+    "sha256": "0b9ad665fc730ddaaf7b8dcfc94a4a10daf35067f734fa36ce3ec5e81a2d71a1",
+    "type": "CDA nivel 1 con texto tomado de las narrativas FHIR; sin declaración de plantilla nacional"
+  }
+}

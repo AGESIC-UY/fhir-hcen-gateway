@@ -1,0 +1,32 @@
+# HAPI FHIR de la PoC HCEN. Almacenamiento local, paquetes e integridad de referencias.
+# Las diferencias respecto de Plataforma se explican en README.md.
+
+spring:
+  jpa:
+    properties:
+      hibernate.dialect: ca.uhn.fhir.jpa.model.dialect.HapiFhirPostgresDialect
+      hibernate.search.enabled: false
+hapi:
+  fhir:
+    fhir_version: R4
+    server_address: http://hapi-fhir:8080/fhir
+    # El contenido binario se conserva en el volumen hapi-binstore.
+    binary_storage_enabled: true
+    binary_storage_mode: FILESYSTEM
+    binary_storage_filesystem_base_directory: /binstore
+    install_transitive_ig_dependencies: false
+    implementationguides:
+      mhd:
+        name: ihe.iti.mhd
+        version: 4.2.4
+        packageUrl: file:///packages/ihe.iti.mhd.tgz
+        installMode: STORE_AND_INSTALL
+    logical_urls:
+      - http://loinc.org/*
+      - https://loinc.org/*
+    # HAPI controla las referencias al escribir y eliminar recursos.
+    enforce_referential_integrity_on_write: true
+    enforce_referential_integrity_on_delete: true
+    allow_external_references: false
+    client_id_strategy: ALPHANUMERIC
+    enable_index_contained_resource: true

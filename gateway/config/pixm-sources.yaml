@@ -1,0 +1,16 @@
+# Cada dominio MRN se asocia a un único sistema cliente.
+# cliente-autorizado es la identidad completa (DN) del certificado, no una contraseña.
+# Para verla: openssl x509 -in certificado.pem -noout -subject -nameopt RFC2253
+# Copiar el valor sin el prefijo subject=. No repetir un system en esta lista.
+# Los ejemplos del tutorial usan cliente-hcen y el dominio 2.16.858.2.99999999.72768.1.
+# Los demás dominios se conservan como parte de la configuración distribuida.
+# Después de cambiar este archivo, reiniciar ihe-gateway para recargarlo.
+
+version: 1
+dominios:
+  - system: urn:oid:2.16.858.2.99999999.72768.1
+    cliente-autorizado: "CN=cliente-hcen,OU=cliente de prueba,O=IHE Gateway Dev"
+    descripcion: Dominio con formato HCEN de los ejemplos de PIXm y del IG fhir.uy
+  - system: urn:oid:2.16.858.2.10002222.72768.1
+    cliente-autorizado: "CN=cliente-test,OU=cliente de prueba,O=IHE Gateway Dev"
+    descripcion: Dominio TEST del juego de datos de aceptacion

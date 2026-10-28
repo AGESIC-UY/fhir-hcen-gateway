@@ -1,0 +1,20 @@
+# TLS mutuo de la PoC HCEN. Se importa cuando SECURITY_MODE es mtls.
+# Las diferencias respecto de Plataforma se explican en README.md.
+
+management:
+  server:
+    ssl:
+      enabled: false
+# Almacenes generados por security/mtls-certs/generar-certificados.sh.
+# Sus contraseñas provienen de compose/.env.mtls.
+server:
+  ssl:
+    enabled: true
+    key-store: file:/mtls-certs/server/gateway-keystore.p12
+    key-store-type: PKCS12
+    key-store-password: ${GATEWAY_KEYSTORE_PASSWORD}
+    key-alias: ihe-gateway
+    trust-store: file:/mtls-certs/server/gateway-truststore.p12
+    trust-store-type: PKCS12
+    trust-store-password: ${GATEWAY_TRUSTSTORE_PASSWORD}
+    client-auth: need

@@ -1,0 +1,1487 @@
+{
+  "resourceType": "Bundle",
+  "id": "hcen-provide-document-bundle-cnu-asse",
+  "meta": {
+    "profile": [
+      "http://fhir.hcen.gub.uy/StructureDefinition/hcen-provide-document-bundle"
+    ]
+  },
+  "entry": [
+    {
+      "request": {
+        "method": "POST",
+        "url": "List"
+      },
+      "fullUrl": "urn:uuid:04bc263d-cf45-5291-8c59-9e042988441b",
+      "resource": {
+        "resourceType": "List",
+        "id": "hcen-cnu-conjunto-envio",
+        "meta": {
+          "profile": [
+            "http://fhir.hcen.gub.uy/StructureDefinition/hcen-submission-set"
+          ]
+        },
+        "text": {
+          "status": "generated",
+          "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\" lang=\"es-UY\" xml:lang=\"es-UY\"><p>Envío a HCEN de la hoja de consulta no urgente de María Laura González Pereira, realizado por Martín Andrés Rodríguez Silva en ASSE el 07/10/2026.</p><p>Entidad de origen del envío: intermediario ilustrativo, OID sintético urn:oid:2.16.858.0.2.16.86.1.0.0.210000000001.</p></div>"
+        },
+        "extension": [
+          {
+            "url": "http://fhir.hcen.gub.uy/StructureDefinition/ext-home-community-id",
+            "valueOid": "urn:oid:2.16.858.2.10000675.73183.1"
+          },
+          {
+            "valueCodeableConcept": {
+              "coding": [
+                {
+                  "system": "http://snomed.info/sct",
+                  "code": "6821000179104",
+                  "display": "hoja de consulta no urgente centralizada - policlínica"
+                }
+              ]
+            },
+            "url": "https://profiles.ihe.net/ITI/MHD/StructureDefinition/ihe-designationType"
+          },
+          {
+            "valueIdentifier": {
+              "type": {
+                "coding": [
+                  {
+                    "code": "XX",
+                    "system": "http://terminology.hl7.org/CodeSystem/v2-0203",
+                    "display": "Organization identifier"
+                  }
+                ]
+              },
+              "system": "urn:ietf:rfc:3986",
+              "value": "urn:oid:2.16.858.0.2.16.86.1.0.0.210000000001"
+            },
+            "url": "https://profiles.ihe.net/ITI/MHD/StructureDefinition/ihe-sourceId"
+          }
+        ],
+        "identifier": [
+          {
+            "use": "official",
+            "system": "urn:ietf:rfc:3986",
+            "value": "urn:uuid:2.2.16.858.2.10001442.67430.20261007103112.1"
+          },
+          {
+            "use": "usual",
+            "system": "urn:ietf:rfc:3986",
+            "value": "urn:oid:2.16.858.2.10001442.67430.20261007103112.2"
+          }
+        ],
+        "code": {
+          "coding": [
+            {
+              "system": "https://profiles.ihe.net/ITI/MHD/CodeSystem/MHDlistTypes",
+              "code": "submissionset",
+              "display": "SubmissionSet as a FHIR List"
+            }
+          ]
+        },
+        "subject": {
+          "reference": "urn:uuid:62e9ddfe-dc50-538b-8767-93f14cfef7df"
+        },
+        "source": {
+          "reference": "urn:uuid:f1a2d39f-9f67-5dbd-8679-ba35101f920f"
+        },
+        "entry": [
+          {
+            "item": {
+              "reference": "urn:uuid:9743b4c6-c832-5282-a47c-e33e6bbec40b"
+            }
+          }
+        ],
+        "language": "es-UY",
+        "status": "current",
+        "mode": "working",
+        "title": "Publicación de consulta no urgente",
+        "date": "2026-10-07T10:31:40-03:00"
+      }
+    },
+    {
+      "request": {
+        "method": "POST",
+        "url": "DocumentReference"
+      },
+      "fullUrl": "urn:uuid:9743b4c6-c832-5282-a47c-e33e6bbec40b",
+      "resource": {
+        "resourceType": "DocumentReference",
+        "id": "hcen-cnu-referencia",
+        "meta": {
+          "profile": [
+            "http://fhir.hcen.gub.uy/StructureDefinition/hcen-document-reference"
+          ]
+        },
+        "text": {
+          "status": "generated",
+          "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\" lang=\"es-UY\" xml:lang=\"es-UY\"><p>Hoja de consulta no urgente de María Laura González Pereira (MRN 1873455), servicio de medicina general, 07/10/2026 10:05–10:25. Autor: Martín Andrés Rodríguez Silva, ASSE. Documento urn:oid:2.16.858.2.10001442.67430.20261007103112.1.</p></div>"
+        },
+        "extension": [
+          {
+            "url": "http://fhir.hcen.gub.uy/StructureDefinition/ext-home-community-id",
+            "valueOid": "urn:oid:2.16.858.2.10000675.73183.1"
+          },
+          {
+            "valueIdentifier": {
+              "system": "urn:ietf:rfc:3986",
+              "value": "urn:oid:2.16.858.2.10001442.71867.1"
+            },
+            "url": "http://fhir.hcen.gub.uy/StructureDefinition/ext-repository-id"
+          },
+          {
+            "url": "http://fhir.hcen.gub.uy/StructureDefinition/ext-scanned-document",
+            "valueBoolean": false
+          }
+        ],
+        "masterIdentifier": {
+          "use": "usual",
+          "system": "urn:ietf:rfc:3986",
+          "value": "urn:oid:2.16.858.2.10001442.67430.20261007103112.1"
+        },
+        "identifier": [
+          {
+            "use": "official",
+            "system": "urn:ietf:rfc:3986",
+            "value": "urn:uuid:1.2.16.858.2.10001442.67430.20261007103112.1"
+          },
+          {
+            "use": "usual",
+            "system": "urn:ietf:rfc:3986",
+            "value": "urn:oid:2.16.858.2.10001442.67430.20261007103112.1"
+          }
+        ],
+        "type": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "6821000179104",
+              "display": "hoja de consulta no urgente centralizada - policlínica"
+            }
+          ]
+        },
+        "category": [
+          {
+            "coding": [
+              {
+                "system": "http://loinc.org",
+                "code": "34108-1",
+                "display": "hoja de consulta no urgente"
+              }
+            ]
+          }
+        ],
+        "subject": {
+          "reference": "urn:uuid:62e9ddfe-dc50-538b-8767-93f14cfef7df"
+        },
+        "author": [
+          {
+            "reference": "urn:uuid:f1a2d39f-9f67-5dbd-8679-ba35101f920f",
+            "type": "PractitionerRole"
+          }
+        ],
+        "custodian": {
+          "reference": "urn:uuid:c37642a5-8630-5132-8e16-d01f456114bb"
+        },
+        "securityLabel": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/v3-Confidentiality",
+                "code": "N",
+                "display": "normal"
+              }
+            ]
+          }
+        ],
+        "content": [
+          {
+            "attachment": {
+              "extension": [
+                {
+                  "valueReference": {
+                    "reference": "urn:uuid:8656313b-53c1-509b-8a6d-61109a62a021"
+                  },
+                  "url": "http://fhir.hcen.gub.uy/StructureDefinition/ext-binary-resource-id"
+                }
+              ],
+              "contentType": "application/fhir+json",
+              "language": "es-UY",
+              "url": "urn:uuid:ba023622-991f-56c4-9a01-d5ba5fc437cd",
+              "title": "Consulta no urgente",
+              "creation": "2026-10-07T10:31:12-03:00"
+            },
+            "format": {
+              "system": "http://ihe.net/fhir/ihe.formatcode.fhir/CodeSystem/formatcode",
+              "code": "urn:ihe:iti:xds:2017:mimeTypeSufficient",
+              "display": "mimeType Sufficient"
+            }
+          }
+        ],
+        "context": {
+          "period": {
+            "start": "2026-10-07T10:05:00-03:00",
+            "end": "2026-10-07T10:25:00-03:00"
+          },
+          "facilityType": {
+            "coding": [
+              {
+                "system": "http://snomed.info/sct",
+                "code": "33022008",
+                "display": "Hospital-based outpatient department"
+              }
+            ]
+          },
+          "practiceSetting": {
+            "coding": [
+              {
+                "system": "http://snomed.info/sct",
+                "code": "700232004",
+                "display": "servicio de medicina general"
+              }
+            ]
+          },
+          "sourcePatientInfo": {
+            "reference": "urn:uuid:62e9ddfe-dc50-538b-8767-93f14cfef7df"
+          }
+        },
+        "language": "es-UY",
+        "status": "current",
+        "date": "2026-10-07T10:31:12-03:00",
+        "description": "Consulta ambulatoria de medicina general por palpitaciones; diagnóstico de hipertensión arterial."
+      }
+    },
+    {
+      "request": {
+        "method": "POST",
+        "url": "Bundle"
+      },
+      "fullUrl": "urn:uuid:ba023622-991f-56c4-9a01-d5ba5fc437cd",
+      "resource": {
+        "resourceType": "Bundle",
+        "id": "hcen-cnu-medicina-general-bundle",
+        "meta": {
+          "profile": [
+            "http://fhir.hcen.gub.uy/StructureDefinition/hcen-consulta-no-urgente-bundle"
+          ]
+        },
+        "identifier": {
+          "use": "usual",
+          "system": "urn:ietf:rfc:3986",
+          "value": "urn:oid:2.16.858.2.10001442.67430.20261007103112.1"
+        },
+        "entry": [
+          {
+            "fullUrl": "urn:uuid:4ad984ad-02c3-5b18-8a04-90139a241ccb",
+            "resource": {
+              "resourceType": "Composition",
+              "id": "hcen-cnu-composicion",
+              "meta": {
+                "profile": [
+                  "http://fhir.hcen.gub.uy/StructureDefinition/uy-consulta-no-urgente"
+                ]
+              },
+              "text": {
+                "status": "generated",
+                "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\" lang=\"es-UY\" xml:lang=\"es-UY\"><p><b>Hoja de Consulta No Urgente</b> — documento final, 07/10/2026 10:31 (UTC-03:00). Confidencialidad: normal.</p><p>Paciente: María Laura González Pereira, CI 45000001. Profesional: Martín Andrés Rodríguez Silva (medicina general). Institución: Administración de los Servicios de Salud del Estado (ASSE).</p><p>Motivo de consulta: palpitaciones. Diagnóstico: hipertensión arterial (confirmado). Procedimientos: electrocardiograma (resultado normal) y medición de presión arterial, 158/96 mmHg (resultado anormal). Indicaciones: dieta hiposódica; enalapril 10 mg, 1 comprimido vía oral cada 12 horas durante 30 días. Control: 06/11/2026.</p></div>"
+              },
+              "identifier": {
+                "use": "usual",
+                "system": "urn:ietf:rfc:3986",
+                "value": "urn:oid:2.16.858.2.10001442.67430.20261007103112.1"
+              },
+              "type": {
+                "coding": [
+                  {
+                    "system": "http://loinc.org",
+                    "code": "34108-1",
+                    "display": "hoja de consulta no urgente"
+                  }
+                ]
+              },
+              "subject": {
+                "reference": "urn:uuid:62e9ddfe-dc50-538b-8767-93f14cfef7df"
+              },
+              "encounter": {
+                "reference": "urn:uuid:d3aeded4-2fa7-594f-8095-f2dd32467856"
+              },
+              "author": [
+                {
+                  "reference": "urn:uuid:f1a2d39f-9f67-5dbd-8679-ba35101f920f"
+                }
+              ],
+              "custodian": {
+                "reference": "urn:uuid:c37642a5-8630-5132-8e16-d01f456114bb"
+              },
+              "section": [
+                {
+                  "code": {
+                    "coding": [
+                      {
+                        "system": "http://loinc.org",
+                        "code": "10154-3",
+                        "display": "Motivo de consulta"
+                      }
+                    ]
+                  },
+                  "text": {
+                    "status": "generated",
+                    "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\" lang=\"es-UY\" xml:lang=\"es-UY\"><p>Palpitaciones de una semana de evolución.</p></div>"
+                  },
+                  "entry": [
+                    {
+                      "reference": "urn:uuid:d32d3745-8992-5610-84e2-93a3f8c3bf0f"
+                    }
+                  ],
+                  "title": "Motivos de consulta"
+                },
+                {
+                  "code": {
+                    "coding": [
+                      {
+                        "system": "http://loinc.org",
+                        "code": "11450-4",
+                        "display": "Diagnostico"
+                      }
+                    ]
+                  },
+                  "text": {
+                    "status": "generated",
+                    "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\" lang=\"es-UY\" xml:lang=\"es-UY\"><p>Hipertensión arterial. Estado: activo. Certeza: confirmado.</p></div>"
+                  },
+                  "entry": [
+                    {
+                      "reference": "urn:uuid:e01dd019-2ad3-5940-8510-736ee69241ae"
+                    }
+                  ],
+                  "title": "Diagnósticos"
+                },
+                {
+                  "code": {
+                    "coding": [
+                      {
+                        "system": "http://loinc.org",
+                        "code": "47519-4",
+                        "display": "Procedimientos relevantes realizados"
+                      }
+                    ]
+                  },
+                  "text": {
+                    "status": "generated",
+                    "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\" lang=\"es-UY\" xml:lang=\"es-UY\"><p>Electrocardiograma: resultado normal. Medición de presión arterial: 158/96 mmHg, resultado anormal.</p></div>"
+                  },
+                  "entry": [
+                    {
+                      "reference": "urn:uuid:1f6e2271-6967-56d1-8f40-92c75263b052"
+                    },
+                    {
+                      "reference": "urn:uuid:3a63c17a-f6c8-5192-b4e8-d90dd6c8ae0a"
+                    }
+                  ],
+                  "title": "Procedimientos relevantes realizados"
+                },
+                {
+                  "code": {
+                    "coding": [
+                      {
+                        "system": "http://snomed.info/sct",
+                        "code": "258081000179106",
+                        "display": "Tratamiento no farmacológico indicado al final de la asistencia"
+                      }
+                    ]
+                  },
+                  "text": {
+                    "status": "generated",
+                    "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\" lang=\"es-UY\" xml:lang=\"es-UY\"><p>Dieta hiposódica.</p></div>"
+                  },
+                  "entry": [
+                    {
+                      "reference": "urn:uuid:17a272a7-ab8b-5131-a4de-725ec45d9f93"
+                    }
+                  ],
+                  "title": "Tratamiento no farmacológico indicado al final de la asistencia"
+                },
+                {
+                  "code": {
+                    "coding": [
+                      {
+                        "system": "http://loinc.org",
+                        "code": "29305-0",
+                        "display": "Tratamiento farmacológico indicado al final de la asistencia"
+                      }
+                    ]
+                  },
+                  "text": {
+                    "status": "generated",
+                    "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\" lang=\"es-UY\" xml:lang=\"es-UY\"><p>Enalapril maleato 10 mg comprimido: 1 comprimido vía oral cada 12 horas durante 30 días.</p></div>"
+                  },
+                  "entry": [
+                    {
+                      "reference": "urn:uuid:4510b9b1-c659-5994-a515-f31d10b24eac"
+                    }
+                  ],
+                  "title": "Tratamiento farmacológico indicado al final de la asistencia"
+                },
+                {
+                  "code": {
+                    "coding": [
+                      {
+                        "system": "http://loinc.org",
+                        "code": "18776-5",
+                        "display": "Instrucciones de seguimiento"
+                      }
+                    ]
+                  },
+                  "text": {
+                    "status": "generated",
+                    "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\" lang=\"es-UY\" xml:lang=\"es-UY\"><p>Control en policlínica de medicina general el 06/11/2026 con registro domiciliario de presión arterial.</p></div>"
+                  },
+                  "entry": [
+                    {
+                      "reference": "urn:uuid:79e57a47-caf1-554e-8243-07111da97309"
+                    }
+                  ],
+                  "title": "Instrucciones de seguimiento"
+                }
+              ],
+              "language": "es-UY",
+              "status": "final",
+              "date": "2026-10-07T10:31:12-03:00",
+              "title": "Consulta no urgente",
+              "confidentiality": "N"
+            }
+          },
+          {
+            "fullUrl": "urn:uuid:62e9ddfe-dc50-538b-8767-93f14cfef7df",
+            "resource": {
+              "resourceType": "Patient",
+              "id": "hcen-paciente-gonzalez",
+              "meta": {
+                "profile": [
+                  "http://fhir.hcen.gub.uy/StructureDefinition/hcen-patient"
+                ]
+              },
+              "text": {
+                "status": "generated",
+                "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\" lang=\"es-UY\" xml:lang=\"es-UY\"><p><b>María Laura González Pereira</b></p><p>MRN: 1873455 (dominio urn:oid:2.16.858.2.99999999.72768.1). Cédula de identidad: 45000001.</p><p>Sexo asignado al nacer: femenino. Sexo administrativo: femenino.</p><p>Fecha de nacimiento: 1987-03-14.</p><p>Teléfono móvil: +598 98 456 000. Correo electrónico: maria.gonzalez@example.com.</p><p>Dirección: Av. Brasil 2765, POCITOS, MONTEVIDEO, Montevideo, 11300, URY.</p></div>"
+              },
+              "extension": [
+                {
+                  "extension": [
+                    {
+                      "valueCodeableConcept": {
+                        "coding": [
+                          {
+                            "system": "http://hl7.org/fhir/administrative-gender",
+                            "code": "female",
+                            "display": "Female"
+                          }
+                        ]
+                      },
+                      "url": "value"
+                    },
+                    {
+                      "valueCodeableConcept": {
+                        "coding": [
+                          {
+                            "system": "http://loinc.org",
+                            "code": "76689-9",
+                            "display": "Sex assigned at birth"
+                          }
+                        ]
+                      },
+                      "url": "type"
+                    }
+                  ],
+                  "url": "http://hl7.org/fhir/StructureDefinition/individual-recordedSexOrGender"
+                }
+              ],
+              "identifier": [
+                {
+                  "type": {
+                    "coding": [
+                      {
+                        "system": "http://terminology.hl7.org/CodeSystem/v2-0203",
+                        "code": "MR",
+                        "display": "Medical record number"
+                      }
+                    ]
+                  },
+                  "use": "usual",
+                  "system": "urn:oid:2.16.858.2.99999999.72768.1",
+                  "value": "1873455"
+                },
+                {
+                  "type": {
+                    "coding": [
+                      {
+                        "system": "http://terminology.hl7.org/CodeSystem/v2-0203",
+                        "code": "NI",
+                        "display": "National unique individual identifier"
+                      }
+                    ]
+                  },
+                  "use": "official",
+                  "system": "urn:oid:2.16.858.2.10000675.68909",
+                  "value": "45000001"
+                }
+              ],
+              "name": [
+                {
+                  "given": [
+                    "María",
+                    "Laura"
+                  ],
+                  "use": "official",
+                  "text": "María Laura González Pereira",
+                  "family": "González Pereira",
+                  "_family": {
+                    "extension": [
+                      {
+                        "url": "http://fhir.hcen.gub.uy/StructureDefinition/ext-primer-apellido",
+                        "valueString": "González"
+                      },
+                      {
+                        "url": "http://fhir.hcen.gub.uy/StructureDefinition/ext-segundo-apellido",
+                        "valueString": "Pereira"
+                      }
+                    ]
+                  }
+                }
+              ],
+              "telecom": [
+                {
+                  "system": "phone",
+                  "value": "+598 98 456 000",
+                  "use": "mobile"
+                },
+                {
+                  "system": "email",
+                  "value": "maria.gonzalez@example.com",
+                  "use": "home"
+                }
+              ],
+              "address": [
+                {
+                  "line": [
+                    "Av. Brasil 2765"
+                  ],
+                  "use": "home",
+                  "type": "physical",
+                  "district": "POCITOS",
+                  "city": "MONTEVIDEO",
+                  "state": "Montevideo",
+                  "postalCode": "11300",
+                  "country": "URY"
+                }
+              ],
+              "language": "es-UY",
+              "active": true,
+              "gender": "female",
+              "birthDate": "1987-03-14"
+            }
+          },
+          {
+            "fullUrl": "urn:uuid:d3aeded4-2fa7-594f-8095-f2dd32467856",
+            "resource": {
+              "resourceType": "Encounter",
+              "id": "hcen-cnu-encuentro",
+              "meta": {
+                "profile": [
+                  "http://fhir.hcen.gub.uy/StructureDefinition/hcen-encounter"
+                ]
+              },
+              "text": {
+                "status": "generated",
+                "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\" lang=\"es-UY\" xml:lang=\"es-UY\"><p>Consulta ambulatoria en policlínica de medicina general de ASSE, 07/10/2026 de 10:05 a 10:25.</p></div>"
+              },
+              "class": {
+                "system": "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+                "code": "AMB",
+                "display": "ambulatory"
+              },
+              "type": [
+                {
+                  "coding": [
+                    {
+                      "system": "http://snomed.info/sct",
+                      "code": "6821000179104",
+                      "display": "hoja de consulta no urgente centralizada - policlínica"
+                    }
+                  ]
+                }
+              ],
+              "serviceType": {
+                "coding": [
+                  {
+                    "system": "http://snomed.info/sct",
+                    "code": "700232004",
+                    "display": "servicio de medicina general"
+                  }
+                ]
+              },
+              "subject": {
+                "reference": "urn:uuid:62e9ddfe-dc50-538b-8767-93f14cfef7df"
+              },
+              "participant": [
+                {
+                  "individual": {
+                    "reference": "urn:uuid:f1a2d39f-9f67-5dbd-8679-ba35101f920f"
+                  },
+                  "period": {
+                    "start": "2026-10-07T10:31:12-03:00"
+                  }
+                }
+              ],
+              "period": {
+                "start": "2026-10-07T10:05:00-03:00",
+                "end": "2026-10-07T10:25:00-03:00"
+              },
+              "serviceProvider": {
+                "reference": "urn:uuid:c37642a5-8630-5132-8e16-d01f456114bb"
+              },
+              "language": "es-UY",
+              "status": "finished"
+            }
+          },
+          {
+            "fullUrl": "urn:uuid:f1a2d39f-9f67-5dbd-8679-ba35101f920f",
+            "resource": {
+              "resourceType": "PractitionerRole",
+              "id": "hcen-rol-medicina-general-rodriguez-asse",
+              "meta": {
+                "profile": [
+                  "http://fhir.hcen.gub.uy/StructureDefinition/hcen-practitioner-role"
+                ]
+              },
+              "text": {
+                "status": "generated",
+                "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\" lang=\"es-UY\" xml:lang=\"es-UY\"><p>Martín Andrés Rodríguez Silva ejerce como médico general, especialidad medicina general, en la Administración de los Servicios de Salud del Estado (ASSE) desde el 01/03/2018.</p></div>"
+              },
+              "period": {
+                "start": "2018-03-01"
+              },
+              "practitioner": {
+                "reference": "urn:uuid:305d79a0-aba1-5405-b05d-e9faf310ff4f",
+                "display": "Martín Andrés Rodríguez Silva"
+              },
+              "organization": {
+                "reference": "urn:uuid:c37642a5-8630-5132-8e16-d01f456114bb",
+                "display": "ASSE"
+              },
+              "code": [
+                {
+                  "coding": [
+                    {
+                      "system": "http://snomed.info/sct",
+                      "code": "59058001",
+                      "display": "médico general"
+                    }
+                  ]
+                }
+              ],
+              "specialty": [
+                {
+                  "coding": [
+                    {
+                      "system": "http://snomed.info/sct",
+                      "code": "394802001",
+                      "display": "medicina general"
+                    }
+                  ]
+                }
+              ],
+              "language": "es-UY",
+              "active": true
+            }
+          },
+          {
+            "fullUrl": "urn:uuid:305d79a0-aba1-5405-b05d-e9faf310ff4f",
+            "resource": {
+              "resourceType": "Practitioner",
+              "id": "hcen-profesional-rodriguez",
+              "meta": {
+                "profile": [
+                  "http://fhir.hcen.gub.uy/StructureDefinition/hcen-practitioner"
+                ]
+              },
+              "text": {
+                "status": "generated",
+                "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\" lang=\"es-UY\" xml:lang=\"es-UY\"><p><b>Martín Andrés Rodríguez Silva</b></p><p>Cédula de identidad: 38700001.</p><p>Sexo administrativo: masculino.</p></div>"
+              },
+              "identifier": [
+                {
+                  "type": {
+                    "coding": [
+                      {
+                        "system": "http://terminology.hl7.org/CodeSystem/v2-0203",
+                        "code": "NI",
+                        "display": "National unique individual identifier"
+                      }
+                    ]
+                  },
+                  "system": "urn:oid:2.16.858.2.10000675.68909",
+                  "value": "38700001"
+                }
+              ],
+              "name": [
+                {
+                  "given": [
+                    "Martín",
+                    "Andrés"
+                  ],
+                  "prefix": [
+                    "Dr."
+                  ],
+                  "use": "official",
+                  "text": "Martín Andrés Rodríguez Silva",
+                  "family": "Rodríguez Silva",
+                  "_family": {
+                    "extension": [
+                      {
+                        "url": "http://fhir.hcen.gub.uy/StructureDefinition/ext-primer-apellido",
+                        "valueString": "Rodríguez"
+                      },
+                      {
+                        "url": "http://fhir.hcen.gub.uy/StructureDefinition/ext-segundo-apellido",
+                        "valueString": "Silva"
+                      }
+                    ]
+                  }
+                }
+              ],
+              "language": "es-UY",
+              "active": true,
+              "gender": "male"
+            }
+          },
+          {
+            "fullUrl": "urn:uuid:c37642a5-8630-5132-8e16-d01f456114bb",
+            "resource": {
+              "resourceType": "Organization",
+              "id": "hcen-organizacion-asse",
+              "meta": {
+                "profile": [
+                  "http://fhir.hcen.gub.uy/StructureDefinition/hcen-organization"
+                ]
+              },
+              "text": {
+                "status": "generated",
+                "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\" lang=\"es-UY\" xml:lang=\"es-UY\"><p><b>Administración de los Servicios de Salud del Estado (ASSE)</b></p><p>Identificador de la institución: urn:oid:2.16.858.0.0.2.1.</p><p>Tipo: prestador de servicios de salud.</p><p>Dirección: Av. Luis Alberto de Herrera 3326, MONTEVIDEO, Montevideo, URY.</p><p>Teléfono: +598 2486 5008.</p></div>"
+              },
+              "identifier": [
+                {
+                  "type": {
+                    "coding": [
+                      {
+                        "system": "http://terminology.hl7.org/CodeSystem/v2-0203",
+                        "code": "XX",
+                        "display": "Organization identifier"
+                      }
+                    ]
+                  },
+                  "use": "official",
+                  "system": "urn:ietf:rfc:3986",
+                  "value": "urn:oid:2.16.858.0.0.2.1"
+                }
+              ],
+              "type": [
+                {
+                  "coding": [
+                    {
+                      "system": "http://terminology.hl7.org/CodeSystem/organization-type",
+                      "code": "prov",
+                      "display": "Healthcare Provider"
+                    }
+                  ]
+                }
+              ],
+              "alias": [
+                "ASSE"
+              ],
+              "telecom": [
+                {
+                  "system": "phone",
+                  "value": "+598 2486 5008",
+                  "use": "work"
+                }
+              ],
+              "address": [
+                {
+                  "line": [
+                    "Av. Luis Alberto de Herrera 3326"
+                  ],
+                  "use": "work",
+                  "type": "both",
+                  "city": "MONTEVIDEO",
+                  "state": "Montevideo",
+                  "country": "URY"
+                }
+              ],
+              "language": "es-UY",
+              "active": true,
+              "name": "Administración de los Servicios de Salud del Estado"
+            }
+          },
+          {
+            "fullUrl": "urn:uuid:d32d3745-8992-5610-84e2-93a3f8c3bf0f",
+            "resource": {
+              "resourceType": "Condition",
+              "id": "hcen-cnu-motivo-consulta",
+              "meta": {
+                "profile": [
+                  "http://fhir.hcen.gub.uy/StructureDefinition/hcen-motivo-consulta"
+                ]
+              },
+              "text": {
+                "status": "generated",
+                "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\" lang=\"es-UY\" xml:lang=\"es-UY\"><p>Motivo de consulta: palpitaciones.</p></div>"
+              },
+              "category": [
+                {
+                  "coding": [
+                    {
+                      "system": "http://snomed.info/sct",
+                      "code": "7611000179107",
+                      "display": "motivo de consulta"
+                    }
+                  ]
+                }
+              ],
+              "code": {
+                "coding": [
+                  {
+                    "system": "http://snomed.info/sct",
+                    "code": "80313002",
+                    "display": "palpitaciones (hallazgo)"
+                  }
+                ]
+              },
+              "subject": {
+                "reference": "urn:uuid:62e9ddfe-dc50-538b-8767-93f14cfef7df"
+              },
+              "language": "es-UY"
+            }
+          },
+          {
+            "fullUrl": "urn:uuid:e01dd019-2ad3-5940-8510-736ee69241ae",
+            "resource": {
+              "resourceType": "Condition",
+              "id": "hcen-cnu-diagnostico",
+              "meta": {
+                "profile": [
+                  "http://fhir.hcen.gub.uy/StructureDefinition/hcen-diagnostico"
+                ]
+              },
+              "text": {
+                "status": "generated",
+                "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\" lang=\"es-UY\" xml:lang=\"es-UY\"><p>Hipertensión arterial. Estado: activo. Certeza: confirmado.</p></div>"
+              },
+              "clinicalStatus": {
+                "coding": [
+                  {
+                    "system": "http://terminology.hl7.org/CodeSystem/condition-clinical",
+                    "code": "active",
+                    "display": "Active"
+                  }
+                ]
+              },
+              "verificationStatus": {
+                "coding": [
+                  {
+                    "system": "http://terminology.hl7.org/CodeSystem/condition-ver-status",
+                    "code": "confirmed",
+                    "display": "Confirmed"
+                  }
+                ]
+              },
+              "category": [
+                {
+                  "coding": [
+                    {
+                      "system": "http://snomed.info/sct",
+                      "code": "439401001",
+                      "display": "Diagnostico"
+                    }
+                  ]
+                }
+              ],
+              "code": {
+                "coding": [
+                  {
+                    "system": "http://snomed.info/sct",
+                    "code": "38341003",
+                    "display": "hipertensión arterial (trastorno)"
+                  }
+                ]
+              },
+              "subject": {
+                "reference": "urn:uuid:62e9ddfe-dc50-538b-8767-93f14cfef7df"
+              },
+              "language": "es-UY"
+            }
+          },
+          {
+            "fullUrl": "urn:uuid:1f6e2271-6967-56d1-8f40-92c75263b052",
+            "resource": {
+              "resourceType": "Procedure",
+              "id": "hcen-cnu-procedimiento-ecg",
+              "meta": {
+                "profile": [
+                  "http://fhir.hcen.gub.uy/StructureDefinition/hcen-procedimiento"
+                ]
+              },
+              "text": {
+                "status": "generated",
+                "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\" lang=\"es-UY\" xml:lang=\"es-UY\"><p>Electrocardiograma: resultado normal.</p></div>"
+              },
+              "code": {
+                "coding": [
+                  {
+                    "system": "http://snomed.info/sct",
+                    "code": "29303009",
+                    "display": "procedimiento electrocardiográfico (procedimiento)"
+                  }
+                ]
+              },
+              "subject": {
+                "reference": "urn:uuid:62e9ddfe-dc50-538b-8767-93f14cfef7df"
+              },
+              "outcome": {
+                "coding": [
+                  {
+                    "system": "http://snomed.info/sct",
+                    "code": "280413001",
+                    "display": "resultado normal"
+                  }
+                ]
+              },
+              "language": "es-UY",
+              "status": "completed"
+            }
+          },
+          {
+            "fullUrl": "urn:uuid:3a63c17a-f6c8-5192-b4e8-d90dd6c8ae0a",
+            "resource": {
+              "resourceType": "Procedure",
+              "id": "hcen-cnu-procedimiento-presion-arterial",
+              "meta": {
+                "profile": [
+                  "http://fhir.hcen.gub.uy/StructureDefinition/hcen-procedimiento"
+                ]
+              },
+              "text": {
+                "status": "generated",
+                "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\" lang=\"es-UY\" xml:lang=\"es-UY\"><p>Medición de presión arterial: 158/96 mmHg, resultado anormal.</p></div>"
+              },
+              "code": {
+                "coding": [
+                  {
+                    "system": "http://snomed.info/sct",
+                    "code": "46973005",
+                    "display": "medir la presión arterial (procedimiento)"
+                  }
+                ]
+              },
+              "subject": {
+                "reference": "urn:uuid:62e9ddfe-dc50-538b-8767-93f14cfef7df"
+              },
+              "outcome": {
+                "coding": [
+                  {
+                    "system": "http://snomed.info/sct",
+                    "code": "280415008",
+                    "display": "resultado anormal"
+                  }
+                ]
+              },
+              "note": [
+                {
+                  "text": "PA 158/96 mmHg en brazo izquierdo, en reposo."
+                }
+              ],
+              "language": "es-UY",
+              "status": "completed"
+            }
+          },
+          {
+            "fullUrl": "urn:uuid:17a272a7-ab8b-5131-a4de-725ec45d9f93",
+            "resource": {
+              "resourceType": "ServiceRequest",
+              "id": "hcen-cnu-indicacion-dieta",
+              "meta": {
+                "profile": [
+                  "http://fhir.hcen.gub.uy/StructureDefinition/hcen-service-request"
+                ]
+              },
+              "text": {
+                "status": "generated",
+                "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\" lang=\"es-UY\" xml:lang=\"es-UY\"><p>Indicación: dieta hiposódica.</p></div>"
+              },
+              "code": {
+                "coding": [
+                  {
+                    "system": "http://snomed.info/sct",
+                    "code": "386619000",
+                    "display": "Low sodium diet"
+                  }
+                ]
+              },
+              "subject": {
+                "reference": "urn:uuid:62e9ddfe-dc50-538b-8767-93f14cfef7df"
+              },
+              "language": "es-UY",
+              "status": "active",
+              "intent": "plan",
+              "patientInstruction": "Reducir el consumo de sal y evitar alimentos procesados"
+            }
+          },
+          {
+            "fullUrl": "urn:uuid:4510b9b1-c659-5994-a515-f31d10b24eac",
+            "resource": {
+              "resourceType": "MedicationRequest",
+              "id": "hcen-cnu-prescripcion-enalapril",
+              "meta": {
+                "profile": [
+                  "http://fhir.hcen.gub.uy/StructureDefinition/hcen-medication-request"
+                ]
+              },
+              "text": {
+                "status": "generated",
+                "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\" lang=\"es-UY\" xml:lang=\"es-UY\"><p>Enalapril maleato 10 mg comprimido: 1 comprimido vía oral cada 12 horas durante 30 días.</p></div>"
+              },
+              "medicationCodeableConcept": {
+                "coding": [
+                  {
+                    "system": "http://snomed.info/sct",
+                    "code": "318853004",
+                    "display": "Enalapril maleate 10 mg oral tablet"
+                  }
+                ]
+              },
+              "subject": {
+                "reference": "urn:uuid:62e9ddfe-dc50-538b-8767-93f14cfef7df"
+              },
+              "requester": {
+                "reference": "urn:uuid:f1a2d39f-9f67-5dbd-8679-ba35101f920f"
+              },
+              "dosageInstruction": [
+                {
+                  "timing": {
+                    "repeat": {
+                      "boundsDuration": {
+                        "value": 30,
+                        "unit": "días",
+                        "system": "http://unitsofmeasure.org",
+                        "code": "d"
+                      },
+                      "frequency": 1,
+                      "period": 12,
+                      "periodUnit": "h"
+                    }
+                  },
+                  "route": {
+                    "coding": [
+                      {
+                        "system": "http://terminology.hl7.org/CodeSystem/v3-RouteOfAdministration",
+                        "code": "PO",
+                        "display": "Swallow, oral"
+                      }
+                    ]
+                  },
+                  "doseAndRate": [
+                    {
+                      "doseQuantity": {
+                        "value": 1,
+                        "unit": "comprimido"
+                      }
+                    }
+                  ],
+                  "text": "1 comprimido vía oral cada 12 horas durante 30 días"
+                }
+              ],
+              "language": "es-UY",
+              "status": "active",
+              "intent": "order",
+              "authoredOn": "2026-10-07T10:31:12-03:00"
+            }
+          },
+          {
+            "fullUrl": "urn:uuid:79e57a47-caf1-554e-8243-07111da97309",
+            "resource": {
+              "resourceType": "ServiceRequest",
+              "id": "hcen-cnu-seguimiento",
+              "meta": {
+                "profile": [
+                  "http://fhir.hcen.gub.uy/StructureDefinition/hcen-service-request"
+                ]
+              },
+              "text": {
+                "status": "generated",
+                "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\" lang=\"es-UY\" xml:lang=\"es-UY\"><p>Control en policlínica de medicina general el 06/11/2026 con registro domiciliario de presión arterial.</p></div>"
+              },
+              "subject": {
+                "reference": "urn:uuid:62e9ddfe-dc50-538b-8767-93f14cfef7df"
+              },
+              "language": "es-UY",
+              "status": "active",
+              "intent": "plan",
+              "occurrenceDateTime": "2026-11-06",
+              "patientInstruction": "Concurrir a control el 06/11/2026 con el registro domiciliario de presión arterial"
+            }
+          }
+        ],
+        "language": "es-UY",
+        "type": "document",
+        "timestamp": "2026-10-07T10:31:12-03:00"
+      }
+    },
+    {
+      "request": {
+        "method": "POST",
+        "url": "Patient"
+      },
+      "fullUrl": "urn:uuid:62e9ddfe-dc50-538b-8767-93f14cfef7df",
+      "resource": {
+        "resourceType": "Patient",
+        "id": "hcen-paciente-gonzalez",
+        "meta": {
+          "profile": [
+            "http://fhir.hcen.gub.uy/StructureDefinition/hcen-patient"
+          ]
+        },
+        "text": {
+          "status": "generated",
+          "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\" lang=\"es-UY\" xml:lang=\"es-UY\"><p><b>María Laura González Pereira</b></p><p>MRN: 1873455 (dominio urn:oid:2.16.858.2.99999999.72768.1). Cédula de identidad: 45000001.</p><p>Sexo asignado al nacer: femenino. Sexo administrativo: femenino.</p><p>Fecha de nacimiento: 1987-03-14.</p><p>Teléfono móvil: +598 98 456 000. Correo electrónico: maria.gonzalez@example.com.</p><p>Dirección: Av. Brasil 2765, POCITOS, MONTEVIDEO, Montevideo, 11300, URY.</p></div>"
+        },
+        "extension": [
+          {
+            "extension": [
+              {
+                "valueCodeableConcept": {
+                  "coding": [
+                    {
+                      "system": "http://hl7.org/fhir/administrative-gender",
+                      "code": "female",
+                      "display": "Female"
+                    }
+                  ]
+                },
+                "url": "value"
+              },
+              {
+                "valueCodeableConcept": {
+                  "coding": [
+                    {
+                      "system": "http://loinc.org",
+                      "code": "76689-9",
+                      "display": "Sex assigned at birth"
+                    }
+                  ]
+                },
+                "url": "type"
+              }
+            ],
+            "url": "http://hl7.org/fhir/StructureDefinition/individual-recordedSexOrGender"
+          }
+        ],
+        "identifier": [
+          {
+            "type": {
+              "coding": [
+                {
+                  "system": "http://terminology.hl7.org/CodeSystem/v2-0203",
+                  "code": "MR",
+                  "display": "Medical record number"
+                }
+              ]
+            },
+            "use": "usual",
+            "system": "urn:oid:2.16.858.2.99999999.72768.1",
+            "value": "1873455"
+          },
+          {
+            "type": {
+              "coding": [
+                {
+                  "system": "http://terminology.hl7.org/CodeSystem/v2-0203",
+                  "code": "NI",
+                  "display": "National unique individual identifier"
+                }
+              ]
+            },
+            "use": "official",
+            "system": "urn:oid:2.16.858.2.10000675.68909",
+            "value": "45000001"
+          }
+        ],
+        "name": [
+          {
+            "given": [
+              "María",
+              "Laura"
+            ],
+            "use": "official",
+            "text": "María Laura González Pereira",
+            "family": "González Pereira",
+            "_family": {
+              "extension": [
+                {
+                  "url": "http://fhir.hcen.gub.uy/StructureDefinition/ext-primer-apellido",
+                  "valueString": "González"
+                },
+                {
+                  "url": "http://fhir.hcen.gub.uy/StructureDefinition/ext-segundo-apellido",
+                  "valueString": "Pereira"
+                }
+              ]
+            }
+          }
+        ],
+        "telecom": [
+          {
+            "system": "phone",
+            "value": "+598 98 456 000",
+            "use": "mobile"
+          },
+          {
+            "system": "email",
+            "value": "maria.gonzalez@example.com",
+            "use": "home"
+          }
+        ],
+        "address": [
+          {
+            "line": [
+              "Av. Brasil 2765"
+            ],
+            "use": "home",
+            "type": "physical",
+            "district": "POCITOS",
+            "city": "MONTEVIDEO",
+            "state": "Montevideo",
+            "postalCode": "11300",
+            "country": "URY"
+          }
+        ],
+        "language": "es-UY",
+        "active": true,
+        "gender": "female",
+        "birthDate": "1987-03-14"
+      }
+    },
+    {
+      "request": {
+        "method": "POST",
+        "url": "Practitioner"
+      },
+      "fullUrl": "urn:uuid:305d79a0-aba1-5405-b05d-e9faf310ff4f",
+      "resource": {
+        "resourceType": "Practitioner",
+        "id": "hcen-profesional-rodriguez",
+        "meta": {
+          "profile": [
+            "http://fhir.hcen.gub.uy/StructureDefinition/hcen-practitioner"
+          ]
+        },
+        "text": {
+          "status": "generated",
+          "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\" lang=\"es-UY\" xml:lang=\"es-UY\"><p><b>Martín Andrés Rodríguez Silva</b></p><p>Cédula de identidad: 38700001.</p><p>Sexo administrativo: masculino.</p></div>"
+        },
+        "identifier": [
+          {
+            "type": {
+              "coding": [
+                {
+                  "system": "http://terminology.hl7.org/CodeSystem/v2-0203",
+                  "code": "NI",
+                  "display": "National unique individual identifier"
+                }
+              ]
+            },
+            "system": "urn:oid:2.16.858.2.10000675.68909",
+            "value": "38700001"
+          }
+        ],
+        "name": [
+          {
+            "given": [
+              "Martín",
+              "Andrés"
+            ],
+            "prefix": [
+              "Dr."
+            ],
+            "use": "official",
+            "text": "Martín Andrés Rodríguez Silva",
+            "family": "Rodríguez Silva",
+            "_family": {
+              "extension": [
+                {
+                  "url": "http://fhir.hcen.gub.uy/StructureDefinition/ext-primer-apellido",
+                  "valueString": "Rodríguez"
+                },
+                {
+                  "url": "http://fhir.hcen.gub.uy/StructureDefinition/ext-segundo-apellido",
+                  "valueString": "Silva"
+                }
+              ]
+            }
+          }
+        ],
+        "language": "es-UY",
+        "active": true,
+        "gender": "male"
+      }
+    },
+    {
+      "request": {
+        "method": "POST",
+        "url": "PractitionerRole"
+      },
+      "fullUrl": "urn:uuid:f1a2d39f-9f67-5dbd-8679-ba35101f920f",
+      "resource": {
+        "resourceType": "PractitionerRole",
+        "id": "hcen-rol-medicina-general-rodriguez-asse",
+        "meta": {
+          "profile": [
+            "http://fhir.hcen.gub.uy/StructureDefinition/hcen-practitioner-role"
+          ]
+        },
+        "text": {
+          "status": "generated",
+          "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\" lang=\"es-UY\" xml:lang=\"es-UY\"><p>Martín Andrés Rodríguez Silva ejerce como médico general, especialidad medicina general, en la Administración de los Servicios de Salud del Estado (ASSE) desde el 01/03/2018.</p></div>"
+        },
+        "period": {
+          "start": "2018-03-01"
+        },
+        "practitioner": {
+          "reference": "urn:uuid:305d79a0-aba1-5405-b05d-e9faf310ff4f",
+          "display": "Martín Andrés Rodríguez Silva"
+        },
+        "organization": {
+          "reference": "urn:uuid:c37642a5-8630-5132-8e16-d01f456114bb",
+          "display": "ASSE"
+        },
+        "code": [
+          {
+            "coding": [
+              {
+                "system": "http://snomed.info/sct",
+                "code": "59058001",
+                "display": "médico general"
+              }
+            ]
+          }
+        ],
+        "specialty": [
+          {
+            "coding": [
+              {
+                "system": "http://snomed.info/sct",
+                "code": "394802001",
+                "display": "medicina general"
+              }
+            ]
+          }
+        ],
+        "language": "es-UY",
+        "active": true
+      }
+    },
+    {
+      "request": {
+        "method": "POST",
+        "url": "Organization"
+      },
+      "fullUrl": "urn:uuid:c37642a5-8630-5132-8e16-d01f456114bb",
+      "resource": {
+        "resourceType": "Organization",
+        "id": "hcen-organizacion-asse",
+        "meta": {
+          "profile": [
+            "http://fhir.hcen.gub.uy/StructureDefinition/hcen-organization"
+          ]
+        },
+        "text": {
+          "status": "generated",
+          "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\" lang=\"es-UY\" xml:lang=\"es-UY\"><p><b>Administración de los Servicios de Salud del Estado (ASSE)</b></p><p>Identificador de la institución: urn:oid:2.16.858.0.0.2.1.</p><p>Tipo: prestador de servicios de salud.</p><p>Dirección: Av. Luis Alberto de Herrera 3326, MONTEVIDEO, Montevideo, URY.</p><p>Teléfono: +598 2486 5008.</p></div>"
+        },
+        "identifier": [
+          {
+            "type": {
+              "coding": [
+                {
+                  "system": "http://terminology.hl7.org/CodeSystem/v2-0203",
+                  "code": "XX",
+                  "display": "Organization identifier"
+                }
+              ]
+            },
+            "use": "official",
+            "system": "urn:ietf:rfc:3986",
+            "value": "urn:oid:2.16.858.0.0.2.1"
+          }
+        ],
+        "type": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/organization-type",
+                "code": "prov",
+                "display": "Healthcare Provider"
+              }
+            ]
+          }
+        ],
+        "alias": [
+          "ASSE"
+        ],
+        "telecom": [
+          {
+            "system": "phone",
+            "value": "+598 2486 5008",
+            "use": "work"
+          }
+        ],
+        "address": [
+          {
+            "line": [
+              "Av. Luis Alberto de Herrera 3326"
+            ],
+            "use": "work",
+            "type": "both",
+            "city": "MONTEVIDEO",
+            "state": "Montevideo",
+            "country": "URY"
+          }
+        ],
+        "language": "es-UY",
+        "active": true,
+        "name": "Administración de los Servicios de Salud del Estado"
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:8656313b-53c1-509b-8a6d-61109a62a021",
+      "resource": {
+        "resourceType": "Binary",
+        "id": "poc-cda-medicina-general",
+        "meta": {
+          "profile": [
+            "http://fhir.hcen.gub.uy/StructureDefinition/hcen-cda-binary"
+          ]
+        },
+        "contentType": "text/xml",
+        "data": "PD94bWwgdmVyc2lvbj0nMS4wJyBlbmNvZGluZz0ndXRmLTgnPz4KPENsaW5pY2FsRG9jdW1lbnQgeG1sbnM9InVybjpobDctb3JnOnYzIj4KICA8dHlwZUlkIHJvb3Q9IjIuMTYuODQwLjEuMTEzODgzLjEuMyIgZXh0ZW5zaW9uPSJQT0NEX0hEMDAwMDQwIiAvPgogIDxpZCByb290PSIyLjE2Ljg1OC4yLjEwMDAxNDQyLjY3NDMwLjIwMjYxMDA3MTAzMTEyLjEiIC8+CiAgPGNvZGUgY29kZT0iMzQxMDgtMSIgY29kZVN5c3RlbT0iMi4xNi44NDAuMS4xMTM4ODMuNi4xIiBkaXNwbGF5TmFtZT0iaG9qYSBkZSBjb25zdWx0YSBubyB1cmdlbnRlIiAvPgogIDx0aXRsZT5Db25zdWx0YSBubyB1cmdlbnRlPC90aXRsZT4KICA8ZWZmZWN0aXZlVGltZSB2YWx1ZT0iMjAyNjEwMDcxMDMxMTItMDMwMCIgLz4KICA8Y29uZmlkZW50aWFsaXR5Q29kZSBjb2RlPSJOIiBjb2RlU3lzdGVtPSIyLjE2Ljg0MC4xLjExMzg4My41LjI1IiAvPgogIDxsYW5ndWFnZUNvZGUgY29kZT0iZXMtVVkiIC8+CiAgPHNldElkIHJvb3Q9IjIuMTYuODU4LjIuMTAwMDE0NDIuNjc0MzAuMjAyNjEwMDcxMDMxMTIuMSIgLz4KICA8dmVyc2lvbk51bWJlciB2YWx1ZT0iMSIgLz4KICA8cmVjb3JkVGFyZ2V0PgogICAgPHBhdGllbnRSb2xlPgogICAgICA8aWQgcm9vdD0iMi4xNi44NTguMi45OTk5OTk5OS43Mjc2OC4xIiBleHRlbnNpb249IjE4NzM0NTUiIC8+CiAgICAgIDxpZCByb290PSIyLjE2Ljg1OC4yLjEwMDAwNjc1LjY4OTA5IiBleHRlbnNpb249IjQ1MDAwMDAxIiAvPgogICAgICA8cGF0aWVudD4KICAgICAgICA8bmFtZT4KICAgICAgICAgIDxnaXZlbj5NYXLDrWE8L2dpdmVuPgogICAgICAgICAgPGdpdmVuPkxhdXJhPC9naXZlbj4KICAgICAgICAgIDxmYW1pbHk+R29uesOhbGV6IFBlcmVpcmE8L2ZhbWlseT4KICAgICAgICA8L25hbWU+CiAgICAgICAgPGFkbWluaXN0cmF0aXZlR2VuZGVyQ29kZSBjb2RlPSJGIiBjb2RlU3lzdGVtPSIyLjE2Ljg0MC4xLjExMzg4My41LjEiIC8+CiAgICAgICAgPGJpcnRoVGltZSB2YWx1ZT0iMTk4NzAzMTQiIC8+CiAgICAgIDwvcGF0aWVudD4KICAgIDwvcGF0aWVudFJvbGU+CiAgPC9yZWNvcmRUYXJnZXQ+CiAgPGF1dGhvcj4KICAgIDx0aW1lIHZhbHVlPSIyMDI2MTAwNzEwMzExMi0wMzAwIiAvPgogICAgPGFzc2lnbmVkQXV0aG9yPgogICAgICA8aWQgcm9vdD0iMi4xNi44NTguMi4xMDAwMDY3NS42ODkwOSIgZXh0ZW5zaW9uPSIzODcwMDAwMSIgLz4KICAgICAgPGFzc2lnbmVkUGVyc29uPgogICAgICAgIDxuYW1lPgogICAgICAgICAgPGdpdmVuPk1hcnTDrW48L2dpdmVuPgogICAgICAgICAgPGdpdmVuPkFuZHLDqXM8L2dpdmVuPgogICAgICAgICAgPGZhbWlseT5Sb2Ryw61ndWV6IFNpbHZhPC9mYW1pbHk+CiAgICAgICAgPC9uYW1lPgogICAgICA8L2Fzc2lnbmVkUGVyc29uPgogICAgICA8cmVwcmVzZW50ZWRPcmdhbml6YXRpb24+CiAgICAgICAgPGlkIHJvb3Q9IjIuMTYuODU4LjAuMC4yLjEiIC8+CiAgICAgICAgPG5hbWU+QWRtaW5pc3RyYWNpw7NuIGRlIGxvcyBTZXJ2aWNpb3MgZGUgU2FsdWQgZGVsIEVzdGFkbzwvbmFtZT4KICAgICAgPC9yZXByZXNlbnRlZE9yZ2FuaXphdGlvbj4KICAgIDwvYXNzaWduZWRBdXRob3I+CiAgPC9hdXRob3I+CiAgPGN1c3RvZGlhbj4KICAgIDxhc3NpZ25lZEN1c3RvZGlhbj4KICAgICAgPHJlcHJlc2VudGVkQ3VzdG9kaWFuT3JnYW5pemF0aW9uPgogICAgICAgIDxpZCByb290PSIyLjE2Ljg1OC4wLjAuMi4xIiAvPgogICAgICAgIDxuYW1lPkFkbWluaXN0cmFjacOzbiBkZSBsb3MgU2VydmljaW9zIGRlIFNhbHVkIGRlbCBFc3RhZG88L25hbWU+CiAgICAgIDwvcmVwcmVzZW50ZWRDdXN0b2RpYW5Pcmdhbml6YXRpb24+CiAgICA8L2Fzc2lnbmVkQ3VzdG9kaWFuPgogIDwvY3VzdG9kaWFuPgogIDxjb21wb25lbnQ+CiAgICA8bm9uWE1MQm9keT4KICAgICAgPHRleHQgbWVkaWFUeXBlPSJ0ZXh0L3BsYWluIiByZXByZXNlbnRhdGlvbj0iVFhUIj5Ib2phIGRlIENvbnN1bHRhIE5vIFVyZ2VudGUgIOKAlCBkb2N1bWVudG8gZmluYWwsIDA3LzEwLzIwMjYgMTA6MzEgKFVUQy0wMzowMCkuIENvbmZpZGVuY2lhbGlkYWQ6IG5vcm1hbC4gUGFjaWVudGU6IE1hcsOtYSBMYXVyYSBHb256w6FsZXogUGVyZWlyYSwgQ0kgNDUwMDAwMDEuIFByb2Zlc2lvbmFsOiBNYXJ0w61uIEFuZHLDqXMgUm9kcsOtZ3VleiBTaWx2YSAobWVkaWNpbmEgZ2VuZXJhbCkuIEluc3RpdHVjacOzbjogQWRtaW5pc3RyYWNpw7NuIGRlIGxvcyBTZXJ2aWNpb3MgZGUgU2FsdWQgZGVsIEVzdGFkbyAoQVNTRSkuIE1vdGl2byBkZSBjb25zdWx0YTogcGFscGl0YWNpb25lcy4gRGlhZ27Ds3N0aWNvOiBoaXBlcnRlbnNpw7NuIGFydGVyaWFsIChjb25maXJtYWRvKS4gUHJvY2VkaW1pZW50b3M6IGVsZWN0cm9jYXJkaW9ncmFtYSAocmVzdWx0YWRvIG5vcm1hbCkgeSBtZWRpY2nDs24gZGUgcHJlc2nDs24gYXJ0ZXJpYWwsIDE1OC85NiBtbUhnIChyZXN1bHRhZG8gYW5vcm1hbCkuIEluZGljYWNpb25lczogZGlldGEgaGlwb3PDs2RpY2E7IGVuYWxhcHJpbCAxMCBtZywgMSBjb21wcmltaWRvIHbDrWEgb3JhbCBjYWRhIDEyIGhvcmFzIGR1cmFudGUgMzAgZMOtYXMuIENvbnRyb2w6IDA2LzExLzIwMjYuCgpNb3Rpdm9zIGRlIGNvbnN1bHRhClBhbHBpdGFjaW9uZXMgZGUgdW5hIHNlbWFuYSBkZSBldm9sdWNpw7NuLgoKRGlhZ27Ds3N0aWNvcwpIaXBlcnRlbnNpw7NuIGFydGVyaWFsLiBFc3RhZG86IGFjdGl2by4gQ2VydGV6YTogY29uZmlybWFkby4KClByb2NlZGltaWVudG9zIHJlbGV2YW50ZXMgcmVhbGl6YWRvcwpFbGVjdHJvY2FyZGlvZ3JhbWE6IHJlc3VsdGFkbyBub3JtYWwuIE1lZGljacOzbiBkZSBwcmVzacOzbiBhcnRlcmlhbDogMTU4Lzk2IG1tSGcsIHJlc3VsdGFkbyBhbm9ybWFsLgoKVHJhdGFtaWVudG8gbm8gZmFybWFjb2zDs2dpY28gaW5kaWNhZG8gYWwgZmluYWwgZGUgbGEgYXNpc3RlbmNpYQpEaWV0YSBoaXBvc8OzZGljYS4KClRyYXRhbWllbnRvIGZhcm1hY29sw7NnaWNvIGluZGljYWRvIGFsIGZpbmFsIGRlIGxhIGFzaXN0ZW5jaWEKRW5hbGFwcmlsIG1hbGVhdG8gMTAgbWcgY29tcHJpbWlkbzogMSBjb21wcmltaWRvIHbDrWEgb3JhbCBjYWRhIDEyIGhvcmFzIGR1cmFudGUgMzAgZMOtYXMuCgpJbnN0cnVjY2lvbmVzIGRlIHNlZ3VpbWllbnRvCkNvbnRyb2wgZW4gcG9saWNsw61uaWNhIGRlIG1lZGljaW5hIGdlbmVyYWwgZWwgMDYvMTEvMjAyNiBjb24gcmVnaXN0cm8gZG9taWNpbGlhcmlvIGRlIHByZXNpw7NuIGFydGVyaWFsLjwvdGV4dD4KICAgIDwvbm9uWE1MQm9keT4KICA8L2NvbXBvbmVudD4KPC9DbGluaWNhbERvY3VtZW50Pg=="
+      },
+      "request": {
+        "method": "POST",
+        "url": "Binary"
+      }
+    }
+  ],
+  "language": "es-UY",
+  "type": "transaction",
+  "timestamp": "2026-10-07T10:31:40-03:00"
+}

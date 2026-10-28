@@ -1,0 +1,186 @@
+# Despliegue HCEN PoC. Descarga imágenes fijadas por digest; no construye código fuente.
+# Las diferencias respecto de Plataforma se explican en README.md.
+
+name: ihe-gateway
+services:
+  # Guarda la información en pg-data. No publica un puerto al exterior.
+  postgres:
+    image: hcengenexus/postgres:16-alpine@sha256:3c5c8892d184f738f4fe282d14ddaa613a38f00f4189d2d94725ebe6f2909ddb
+    restart: unless-stopped
+    environment:
+      POSTGRES_DB: hapi
+      POSTGRES_USER: ${POSTGRES_USER:?falta POSTGRES_USER en compose/.env}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:?falta POSTGRES_PASSWORD en compose/.env}
+    volumes:
+      - pg-data:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U $${POSTGRES_USER} -d hapi"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+    networks: [backend]
+  # Prepara permisos del almacenamiento y termina. No es un servicio permanente.
+  binstore-init:
+    image: hcengenexus/postgres:16-alpine@sha256:3c5c8892d184f738f4fe282d14ddaa613a38f00f4189d2d94725ebe6f2909ddb
+    user: "0:0"
+    entrypoint: ["sh", "-c", "chown -R 65532:65532 /binstore && chmod 700 /binstore && echo 'binstore listo para uid 65532' && ls -ldn /binstore"]
+    volumes:
+      - hapi-binstore:/binstore
+    network_mode: "none"
+    restart: "no"
+  # Servidor FHIR interno. Conserva recursos y contenido en los volúmenes locales.
+  hapi-fhir:
+    image: hcengenexus/hapi:${HAPI_VERSION:?falta HAPI_VERSION en compose/.env}@sha256:${HAPI_DIGEST:?falta HAPI_DIGEST en compose/.env}
+    restart: unless-stopped
+    environment:
+      SPRING_DATASOURCE_URL: jdbc:postgresql://postgres:5432/hapi
+      SPRING_DATASOURCE_USERNAME: ${POSTGRES_USER}
+      SPRING_DATASOURCE_PASSWORD: ${POSTGRES_PASSWORD}
+      SPRING_DATASOURCE_DRIVER_CLASS_NAME: org.postgresql.Driver
+      HIBERNATE_DIALECT: ca.uhn.fhir.jpa.model.dialect.HapiFhirPostgresDialect
+    volumes:
+      - ../hapi/application.yaml:/app/config/application.yaml:ro
+      - ../hapi/packages:/packages:ro
+      - hapi-binstore:/binstore
+    healthcheck:
+      test: ["CMD", "java", "-cp", "/app", "HealthCheck"]
+      interval: 10s
+      timeout: 10s
+      start_period: 420s
+      retries: 36
+    depends_on:
+      postgres:
+        condition: service_healthy
+      binstore-init:
+        condition: service_completed_successfully
+    networks: [backend]
+  # Carga la guía y dependencias desde directorios montados en modo lectura.
+  fhir-validator:
+    profiles: [real]
+    image: ${VALIDATOR_IMAGE}
+    restart: unless-stopped
+    environment:
+      IG_PATH: /igs/${IG_FILE},${IG_DEPENDENCIES:-}
+      DISABLE_TERMINOLOGY: ${DISABLE_TERMINOLOGY:-false}
+      SUPPRESS_BINDING_WARNINGS: ${SUPPRESS_BINDING_WARNINGS:-false}
+      ANY_EXTENSIONS_ALLOWED: ${ANY_EXTENSIONS_ALLOWED:-true}
+      JBOSS_JAVA_SIZING: ${VALIDATOR_JAVA_SIZING:--Xms256m -Xmx3g -XX:MetaspaceSize=96M -XX:MaxMetaspaceSize=512m -Djboss.as.management.blocking.timeout=900}
+    volumes:
+      - ../validator/igs:/igs:ro
+      - ../hapi/packages:/packages:ro
+    healthcheck:
+      test: ["CMD-SHELL", "for p in $$(echo \"$$IG_PATH\" | tr ',' ' '); do test -f \"$$p\" || exit 1; done && curl -fs -o /dev/null -X POST -H 'Content-Type: application/fhir+json' --data '{\"resourceType\":\"Patient\"}' http://localhost:8080/fhir-validator/validate"]
+      interval: 15s
+      timeout: 40s
+      start_period: 120s
+      retries: 5
+    networks:
+      frontend:
+        aliases: [fhir-validator]
+  # Servicio auxiliar del producto. El tutorial utiliza únicamente el perfil real.
+  validator-stub:
+    profiles: [stub]
+    image: hcengenexus/ihe-gateway-validator-stub:0.1.0@sha256:2e57e489252906236befbfb3610dcadfe553d30590119ed297d296652cfdbdcb
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD-SHELL", "curl -fs -o /dev/null -X POST -H 'Content-Type: application/fhir+json' --data '{\"resourceType\":\"Patient\"}' http://localhost:8080/fhir-validator/validate"]
+      interval: 10s
+      timeout: 40s
+      start_period: 30s
+      retries: 5
+    networks:
+      frontend:
+        aliases: [fhir-validator]
+  # Controla el acceso publicado al validador, por defecto sólo desde el equipo local.
+  validador-guard:
+    profiles: [real]
+    image: hcengenexus/ihe-gateway-validador-guard:0.1.0@sha256:7d02db3d31f7a08b13c08c38f5a8b03983b6a7716bf2e19fe8ec4b76e9acadc0
+    restart: unless-stopped
+    environment:
+      VALIDATOR_UPSTREAM: fhir-validator:8080
+      VALIDATOR_RATE_LIMIT: ${VALIDATOR_RATE_LIMIT:-20r/s}
+      VALIDATOR_RATE_BURST: ${VALIDATOR_RATE_BURST:-40}
+      VALIDATOR_ALLOWED_EXTRA_CIDRS: ${VALIDATOR_ALLOWED_EXTRA_CIDRS:-}
+    depends_on:
+      fhir-validator:
+        condition: service_healthy
+    ports:
+      - "${VALIDATOR_PORT:-8081}:8080"
+    healthcheck:
+      test: ["CMD", "wget", "-q", "-O", "/dev/null", "http://127.0.0.1:8080/salud-guard"]
+      interval: 10s
+      timeout: 5s
+      start_period: 10s
+      retries: 5
+    networks: [frontend]
+  validador-guard-stub:
+    profiles: [stub]
+    image: hcengenexus/ihe-gateway-validador-guard:0.1.0@sha256:7d02db3d31f7a08b13c08c38f5a8b03983b6a7716bf2e19fe8ec4b76e9acadc0
+    restart: unless-stopped
+    environment:
+      VALIDATOR_UPSTREAM: fhir-validator:8080
+      VALIDATOR_RATE_LIMIT: ${VALIDATOR_RATE_LIMIT:-20r/s}
+      VALIDATOR_RATE_BURST: ${VALIDATOR_RATE_BURST:-40}
+      VALIDATOR_ALLOWED_EXTRA_CIDRS: ${VALIDATOR_ALLOWED_EXTRA_CIDRS:-}
+    depends_on:
+      validator-stub:
+        condition: service_healthy
+    ports:
+      - "${VALIDATOR_PORT:-8081}:8080"
+    healthcheck:
+      test: ["CMD", "wget", "-q", "-O", "/dev/null", "http://127.0.0.1:8080/salud-guard"]
+      interval: 10s
+      timeout: 5s
+      start_period: 10s
+      retries: 5
+    networks: [frontend]
+  # Entrada HTTPS del cliente. Monta los certificados y la configuración del Gateway.
+  ihe-gateway:
+    image: hcengenexus/ihe-gateway:1.0.0@sha256:475bb664313bba2f1cc753aae2154961b2f601c2858c4a970bf155a50dcef57e
+    restart: unless-stopped
+    env_file:
+      - .env
+      - path: .env.mtls
+        required: false
+    environment:
+      HAPI_BASE_URL: ${HAPI_BASE_URL:-http://hapi-fhir:8080/fhir}
+      VALIDATION_ENABLED: ${VALIDATION_ENABLED:-false}
+      VALIDATOR_BASE_URL: ${VALIDATOR_BASE_URL:-http://fhir-validator:8080/fhir-validator}
+      GATEWAY_ENV: ${GATEWAY_ENV:-dev}
+      MANAGEMENT_PORT: ${MANAGEMENT_PORT:-8090}
+      MHD_MAX_BUNDLE_MB: ${MHD_MAX_BUNDLE_MB:-50}
+      MHD_FHIR_DOCUMENT_PUBLISH_ENABLED: ${MHD_FHIR_DOCUMENT_PUBLISH_ENABLED:-true}
+      MHD_MAX_DOCUMENT_BUNDLE_MB: ${MHD_MAX_DOCUMENT_BUNDLE_MB:-9}
+      MHD_PATIENT_CREATE_ENABLED: ${MHD_PATIENT_CREATE_ENABLED:-true}
+      MHD_ATTACHMENT_URL_FORMAT: ${MHD_ATTACHMENT_URL_FORMAT:-plataforma}
+      MHD_REPOSITORY_UNIQUE_ID: ${MHD_REPOSITORY_UNIQUE_ID:-2.25.256589593566056775410682347957596112599}
+      JAVA_TOOL_OPTIONS: "-Xmx1g -XX:+UseSerialGC -XX:+ExitOnOutOfMemoryError"
+    mem_limit: 1536m
+    ports:
+      - "${GATEWAY_PORT:-8080}:8080"
+    volumes:
+      - ../gateway/config:/config:ro
+      - ../security/mtls-certs:/mtls-certs:ro
+    read_only: true
+    tmpfs:
+      - /tmp
+    security_opt:
+      - no-new-privileges:true
+    healthcheck:
+      test: ["CMD", "wget", "-qO-", "http://127.0.0.1:${MANAGEMENT_PORT:-8090}/actuator/health/readiness"]
+      interval: 15s
+      timeout: 40s
+      start_period: 180s
+      retries: 5
+    depends_on:
+      hapi-fhir:
+        condition: service_healthy
+    networks: [backend, frontend]
+networks:
+  backend:
+    internal: true
+  frontend: {}
+# Estos volúmenes sobreviven a down. La opción down -v elimina sus datos.
+volumes:
+  pg-data:
+  hapi-binstore:
